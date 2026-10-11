@@ -1,0 +1,2834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dua Harbel | Herbal Wellness</title>
+
+  <meta
+    name="description"
+    content="Dua Harbel — thoughtfully crafted herbal wellness products inspired by traditional botanical rituals."
+  />
+  <meta name="theme-color" content="#18352b" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --forest: #18352b;
+      --forest-dark: #10271f;
+      --sage: #6d806d;
+      --cream: #f6f1e7;
+      --ivory: #fcfaf5;
+      --sand: #d8c8ad;
+      --clay: #a86748;
+      --gold: #b8935a;
+      --ink: #18231e;
+      --muted: #68736c;
+      --white: #ffffff;
+      --border: rgba(24, 53, 43, .13);
+      --shadow: 0 25px 70px rgba(16, 39, 31, .12);
+      --radius: 22px;
+      --transition: .3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--ivory);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       ANNOUNCEMENT
+    ========================= */
+
+    .announcement {
+      background: var(--forest);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252,250,245,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      min-width: 180px;
+    }
+
+    .brand strong {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      letter-spacing: .08em;
+    }
+
+    .brand span {
+      margin-top: 5px;
+      font-size: 9px;
+      letter-spacing: .28em;
+      color: var(--clay);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: var(--clay);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      display: grid;
+      place-items: center;
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      background: var(--forest);
+      color: white;
+    }
+
+    .cart-button {
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -3px;
+      right: -2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--clay);
+      color: white;
+      font-size: 10px;
+      display: grid;
+      place-items: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 28px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      min-height: 690px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-copy {
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--clay);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(54px, 6vw, 86px);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: -.04em;
+      max-width: 620px;
+    }
+
+    .hero h1 em {
+      color: var(--clay);
+      font-style: italic;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      max-width: 490px;
+      margin: 28px 0 35px;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 14px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--forest);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--forest-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      border-color: var(--forest);
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .hero-image img {
+      height: 100%;
+    }
+
+    .hero-image-card {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      background: rgba(252,250,245,.94);
+      backdrop-filter: blur(15px);
+      padding: 18px 20px;
+      width: 210px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image-card small {
+      color: var(--muted);
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 4px;
+    }
+
+    .hero-image-card strong {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    /* =========================
+       TRUST
+    ========================= */
+
+    .trust {
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       SECTION HEAD
+    ========================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -.03em;
+    }
+
+    .section-description {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       CATEGORY CARDS
+    ========================= */
+
+    .categories {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .category {
+      position: relative;
+      height: 470px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: white;
+    }
+
+    .category img {
+      height: 100%;
+      transition: transform .7s ease;
+    }
+
+    .category:hover img {
+      transform: scale(1.05);
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.72));
+    }
+
+    .category-content {
+      position: absolute;
+      z-index: 2;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+    }
+
+    .category-content span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      opacity: .8;
+    }
+
+    .category-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 31px;
+      font-weight: 500;
+      margin: 5px 0 15px;
+    }
+
+    .category-content a {
+      font-size: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.6);
+      padding-bottom: 3px;
+    }
+
+    /* =========================
+       FEATURED PRODUCT
+    ========================= */
+
+    .featured {
+      background: var(--forest);
+      color: white;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      min-height: 600px;
+    }
+
+    .featured-image img {
+      height: 100%;
+    }
+
+    .featured-copy {
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-copy .eyebrow {
+      color: #d7b886;
+    }
+
+    .featured-copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 65px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .featured-copy p {
+      color: rgba(255,255,255,.68);
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+
+    .ingredient-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .ingredient {
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px;
+      padding: 8px 13px;
+      font-size: 11px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products-section {
+      background: var(--cream);
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter {
+      border: 1px solid var(--border);
+      background: transparent;
+      border-radius: 100px;
+      padding: 10px 17px;
+      font-size: 12px;
+      transition: var(--transition);
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      position: relative;
+    }
+
+    .product-image {
+      height: 350px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #e9e1d4;
+      position: relative;
+    }
+
+    .product-image img {
+      height: 100%;
+      transition: transform .5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: white;
+      border-radius: 100px;
+      padding: 6px 10px;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .wishlist {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(255,255,255,.9);
+      font-size: 17px;
+    }
+
+    .product-info {
+      padding: 16px 4px;
+    }
+
+    .product-category {
+      color: var(--clay);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 700;
+    }
+
+    .product-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin: 5px 0;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .add-product {
+      border: 1px solid var(--border);
+      background: transparent;
+      border-radius: 100px;
+      padding: 7px 12px;
+      font-size: 10px;
+      transition: var(--transition);
+    }
+
+    .add-product:hover {
+      background: var(--forest);
+      color: white;
+    }
+
+    /* =========================
+       STORY
+    ========================= */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+    }
+
+    .story-image img {
+      height: 620px;
+      border-radius: 28px;
+    }
+
+    .story-label {
+      position: absolute;
+      bottom: 25px;
+      right: -25px;
+      background: var(--clay);
+      color: white;
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      transform: rotate(-8deg);
+    }
+
+    .story-copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .story-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .story-points {
+      margin: 30px 0;
+      display: grid;
+      gap: 18px;
+    }
+
+    .story-point {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .story-number {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      color: var(--clay);
+    }
+
+    .story-point strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .story-point span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       RITUAL
+    ========================= */
+
+    .ritual {
+      background: #eee7d9;
+    }
+
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .ritual-card {
+      background: var(--ivory);
+      padding: 35px;
+      border-radius: 20px;
+    }
+
+    .ritual-number {
+      color: var(--clay);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+    }
+
+    .ritual-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 500;
+      margin: 45px 0 10px;
+    }
+
+    .ritual-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial p {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      line-height: 1.45;
+      margin-bottom: 25px;
+    }
+
+    .testimonial small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-section {
+      background: var(--cream);
+    }
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 23px 0;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .faq-icon {
+      transition: transform .3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 13px;
+      transition: max-height .35s ease, padding .35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding-bottom: 22px;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* =========================
+       NEWSLETTER
+    ========================= */
+
+    .newsletter {
+      background: var(--forest);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .newsletter-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .newsletter h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 55px);
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .newsletter p {
+      color: rgba(255,255,255,.65);
+      max-width: 430px;
+      margin-top: 12px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      min-width: min(100%, 450px);
+      border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: white;
+      padding: 14px 0;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,.45);
+    }
+
+    .newsletter-form button {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-weight: 700;
+      padding: 14px 0 14px 15px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--forest-dark);
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 45px;
+      padding-bottom: 60px;
+    }
+
+    .footer-brand strong {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      letter-spacing: .08em;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,.5);
+      max-width: 290px;
+      margin-top: 15px;
+      font-size: 12px;
+    }
+
+    footer h4 {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: #d7b886;
+    }
+
+    footer ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    footer li {
+      color: rgba(255,255,255,.58);
+      font-size: 12px;
+    }
+
+    footer li:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,.4);
+      font-size: 10px;
+    }
+
+    /* =========================
+       CART DRAWER
+    ========================= */
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.42);
+      z-index: 150;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      z-index: 160;
+      top: 0;
+      right: 0;
+      width: min(430px, 100%);
+      height: 100vh;
+      background: var(--ivory);
+      transform: translateX(100%);
+      transition: transform .35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      padding: 25px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-head h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .empty-cart {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 75px 1fr auto;
+      gap: 13px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 75px;
+      height: 85px;
+      border-radius: 10px;
+    }
+
+    .cart-item h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .cart-item small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .remove-item {
+      border: 0;
+      background: transparent;
+      color: var(--clay);
+      font-size: 11px;
+    }
+
+    .cart-footer {
+      border-top: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .checkout {
+      width: 100%;
+    }
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .search-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 180;
+      background: rgba(16,39,31,.97);
+      color: white;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+      padding: 35px;
+    }
+
+    .search-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .search-close {
+      position: absolute;
+      right: 35px;
+      top: 30px;
+      color: white;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .search-content {
+      max-width: 800px;
+      margin: 18vh auto 0;
+    }
+
+    .search-content label {
+      color: #d7b886;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 10px;
+    }
+
+    .search-content input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+      color: white;
+      outline: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 80px);
+      padding: 15px 0;
+    }
+
+    /* =========================
+       TOAST
+    ========================= */
+
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translate(-50%, 100px);
+      background: var(--forest);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 100px;
+      font-size: 12px;
+      z-index: 300;
+      opacity: 0;
+      transition: .35s;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 80;
+      width: 53px;
+      height: 53px;
+      border-radius: 50%;
+      background: #198754;
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      font-size: 21px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: grid;
+      }
+
+      .hero-grid,
+      .featured-grid,
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 60px 45px;
+      }
+
+      .hero-image {
+        min-height: 500px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .categories {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category:first-child {
+        grid-column: span 2;
+      }
+
+      .featured-copy {
+        padding: 60px 45px;
+      }
+
+      .story-image {
+        max-width: 600px;
+      }
+
+      .newsletter-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .announcement {
+        font-size: 9px;
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand strong {
+        font-size: 22px;
+      }
+
+      .brand span {
+        font-size: 7px;
+      }
+
+      .nav-actions .search-btn {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 14px;
+      }
+
+      .hero-grid {
+        border-radius: 22px;
+      }
+
+      .hero-copy {
+        padding: 50px 25px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-image {
+        min-height: 400px;
+      }
+
+      .hero-image-card {
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 15px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .category:first-child {
+        grid-column: auto;
+      }
+
+      .category {
+        height: 380px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+
+      .product-image {
+        height: 260px;
+      }
+
+      .featured-copy {
+        padding: 55px 25px;
+      }
+
+      .story-grid {
+        gap: 45px;
+      }
+
+      .story-image img {
+        height: 480px;
+      }
+
+      .story-label {
+        width: 110px;
+        height: 110px;
+        right: -5px;
+      }
+
+      .ritual-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter {
+        padding: 65px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-bottom span {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement">
+    Complimentary delivery on orders over PKR 5,000
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+
+      <a href="#" class="brand">
+        <strong>DUA HARBEL</strong>
+        <span>Herbal Wellness</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#story">Our Story</a>
+        <a href="#ritual">The Ritual</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="icon-btn search-btn" id="openSearch" aria-label="Search">
+          ⌕
+        </button>
+
+        <button class="icon-btn" id="mobileMenu" aria-label="Menu">
+          ☰
+        </button>
+
+        <button class="icon-btn cart-button" id="openCart" aria-label="Shopping cart">
+          ♡
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow">
+              Botanical living
+            </div>
+
+            <h1>
+              Nature, made into a
+              <em>daily ritual.</em>
+            </h1>
+
+            <p class="hero-text">
+              Discover carefully selected herbal blends and botanical products
+              created to bring a more intentional rhythm to everyday wellness.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#shop" class="btn btn-primary">
+                Explore collection →
+              </a>
+
+              <a href="#story" class="btn btn-outline">
+                Our philosophy
+              </a>
+            </div>
+
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+              alt="Botanical wellness products"
+            >
+
+            <div class="hero-image-card">
+              <small>Featured ritual</small>
+              <strong>Daily Botanical Tea</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <strong>Botanical</strong>
+          <span>Thoughtfully selected ingredients</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Small Batch</strong>
+          <span>Made with care and attention</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Simple</strong>
+          <span>Clear and considered formulas</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Pakistan</strong>
+          <span>Proudly crafted locally</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="section" id="collections">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="eyebrow">Explore</div>
+            <h2 class="section-title">
+              Botanical collections
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Explore our thoughtfully curated categories, created around
+            simple and meaningful daily rituals.
+          </p>
+
+        </div>
+
+        <div class="categories">
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+              alt="Herbal teas"
+            >
+
+            <div class="category-content">
+              <span>01 / Infusions</span>
+              <h3>Herbal Teas</h3>
+              <a href="#shop">Explore collection →</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85"
+              alt="Botanical oils"
+            >
+
+            <div class="category-content">
+              <span>02 / Botanicals</span>
+              <h3>Natural Oils</h3>
+              <a href="#shop">Explore collection →</a>
+            </div>
+          </article>
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1611073762568-7e8b5f8b5e5a?auto=format&fit=crop&w=900&q=85"
+              alt="Herbal powders"
+            >
+
+            <div class="category-content">
+              <span>03 / Blends</span>
+              <h3>Herbal Powders</h3>
+              <a href="#shop">Explore collection →</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+
+      <div class="featured-grid">
+
+        <div class="featured-image">
+          <img
+            src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85"
+            alt="Dua Harbel botanical tea"
+          >
+        </div>
+
+        <div class="featured-copy">
+
+          <div class="eyebrow">
+            Signature blend
+          </div>
+
+          <h2>
+            The Evening
+            Botanical Ritual
+          </h2>
+
+          <p>
+            A carefully composed herbal tea blend designed for a quiet,
+            comforting evening moment. Make your cup, slow down, and enjoy
+            the ritual.
+          </p>
+
+          <div class="ingredient-list">
+            <span class="ingredient">Chamomile</span>
+            <span class="ingredient">Rose</span>
+            <span class="ingredient">Lemongrass</span>
+            <span class="ingredient">Mint</span>
+          </div>
+
+          <a href="#shop" class="btn btn-primary" style="background:#d7b886;color:#18352b;width:max-content;">
+            Shop signature blend →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section products-section" id="shop">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="eyebrow">The collection</div>
+            <h2 class="section-title">
+              Shop botanicals
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Explore our current selection of teas, oils and herbal blends.
+          </p>
+
+        </div>
+
+        <div class="filter-row">
+
+          <button class="filter active" data-filter="all">
+            All
+          </button>
+
+          <button class="filter" data-filter="tea">
+            Teas
+          </button>
+
+          <button class="filter" data-filter="oil">
+            Oils
+          </button>
+
+          <button class="filter" data-filter="powder">
+            Powders
+          </button>
+
+          <button class="filter" data-filter="blend">
+            Blends
+          </button>
+
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <!-- PRODUCT 1 -->
+          <article class="product-card" data-category="tea">
+
+            <div class="product-image">
+
+              <span class="product-badge">
+                Bestseller
+              </span>
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1597318181409-cf64d0d3d3f1?auto=format&fit=crop&w=800&q=85"
+                alt="Dua Harbel Signature Green Tea"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Tea</span>
+
+              <h3>Signature Green Tea</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,450</span>
+
+                <button
+                  class="add-product"
+                  data-name="Signature Green Tea"
+                  data-price="1450"
+                  data-image="https://images.unsplash.com/photo-1597318181409-cf64d0d3d3f1?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 2 -->
+          <article class="product-card" data-category="tea">
+
+            <div class="product-image">
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=85"
+                alt="Evening Herbal Tea"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Tea</span>
+
+              <h3>Evening Herbal Tea</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,650</span>
+
+                <button
+                  class="add-product"
+                  data-name="Evening Herbal Tea"
+                  data-price="1650"
+                  data-image="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 3 -->
+          <article class="product-card" data-category="oil">
+
+            <div class="product-image">
+
+              <span class="product-badge">
+                New
+              </span>
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=85"
+                alt="Botanical Hair Oil"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Oil</span>
+
+              <h3>Botanical Hair Oil</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,850</span>
+
+                <button
+                  class="add-product"
+                  data-name="Botanical Hair Oil"
+                  data-price="1850"
+                  data-image="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 4 -->
+          <article class="product-card" data-category="powder">
+
+            <div class="product-image">
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1603905179139-db12ab535e2c?auto=format&fit=crop&w=800&q=85"
+                alt="Organic Moringa Powder"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Powder</span>
+
+              <h3>Moringa Leaf Powder</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,200</span>
+
+                <button
+                  class="add-product"
+                  data-name="Moringa Leaf Powder"
+                  data-price="1200"
+                  data-image="https://images.unsplash.com/photo-1603905179139-db12ab535e2c?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 5 -->
+          <article class="product-card" data-category="blend">
+
+            <div class="product-image">
+
+              <span class="product-badge">
+                Popular
+              </span>
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+                alt="Digestive Botanical Blend"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Blend</span>
+
+              <h3>Digestive Botanical Blend</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,550</span>
+
+                <button
+                  class="add-product"
+                  data-name="Digestive Botanical Blend"
+                  data-price="1550"
+                  data-image="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 6 -->
+          <article class="product-card" data-category="oil">
+
+            <div class="product-image">
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1611073762568-7e8b5f8b5e5a?auto=format&fit=crop&w=800&q=85"
+                alt="Rose Botanical Oil"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Oil</span>
+
+              <h3>Rose Botanical Oil</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,950</span>
+
+                <button
+                  class="add-product"
+                  data-name="Rose Botanical Oil"
+                  data-price="1950"
+                  data-image="https://images.unsplash.com/photo-1611073762568-7e8b5f8b5e5a?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 7 -->
+          <article class="product-card" data-category="tea">
+
+            <div class="product-image">
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=85"
+                alt="Mint Botanical Tea"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Tea</span>
+
+              <h3>Fresh Mint Tea</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,250</span>
+
+                <button
+                  class="add-product"
+                  data-name="Fresh Mint Tea"
+                  data-price="1250"
+                  data-image="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- PRODUCT 8 -->
+          <article class="product-card" data-category="powder">
+
+            <div class="product-image">
+
+              <button class="wishlist" aria-label="Add to wishlist">
+                ♡
+              </button>
+
+              <img
+                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=85"
+                alt="Turmeric Botanical Powder"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">Powder</span>
+
+              <h3>Golden Turmeric Powder</h3>
+
+              <div class="product-meta">
+                <span class="price">PKR 1,100</span>
+
+                <button
+                  class="add-product"
+                  data-name="Golden Turmeric Powder"
+                  data-price="1100"
+                  data-image="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=85"
+                >
+                  Add to bag
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" id="story">
+
+      <div class="container story-grid">
+
+        <div class="story-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=1000&q=85"
+            alt="Natural botanical ingredients"
+          >
+
+          <div class="story-label">
+            Rooted in<br>nature
+          </div>
+
+        </div>
+
+        <div class="story-copy">
+
+          <div class="eyebrow">
+            The Dua Harbel story
+          </div>
+
+          <h2>
+            Ancient botanicals.
+            Modern rituals.
+          </h2>
+
+          <p>
+            Dua Harbel was created around a simple idea: wellness does not
+            have to feel complicated.
+          </p>
+
+          <p>
+            We bring together traditional botanical ingredients and a
+            thoughtful modern approach to create products that fit naturally
+            into everyday life.
+          </p>
+
+          <div class="story-points">
+
+            <div class="story-point">
+              <div class="story-number">01</div>
+              <div>
+                <strong>Thoughtful sourcing</strong>
+                <span>Ingredients selected with care and transparency.</span>
+              </div>
+            </div>
+
+            <div class="story-point">
+              <div class="story-number">02</div>
+              <div>
+                <strong>Simple formulations</strong>
+                <span>Clear ingredients without unnecessary complexity.</span>
+              </div>
+            </div>
+
+            <div class="story-point">
+              <div class="story-number">03</div>
+              <div>
+                <strong>Made for rituals</strong>
+                <span>Designed to become meaningful everyday habits.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <a href="#ritual" class="btn btn-outline">
+            Discover our approach →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RITUAL -->
+    <section class="section ritual" id="ritual">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="eyebrow">A slower approach</div>
+            <h2 class="section-title">
+              Make wellness a ritual.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Small moments can become meaningful routines when we give them
+            our attention.
+          </p>
+
+        </div>
+
+        <div class="ritual-grid">
+
+          <article class="ritual-card">
+            <span class="ritual-number">01</span>
+            <h3>Choose</h3>
+            <p>
+              Select a botanical product that fits naturally into your
+              routine.
+            </p>
+          </article>
+
+          <article class="ritual-card">
+            <span class="ritual-number">02</span>
+            <h3>Prepare</h3>
+            <p>
+              Slow down for a moment and prepare your tea, blend or oil with
+              intention.
+            </p>
+          </article>
+
+          <article class="ritual-card">
+            <span class="ritual-number">03</span>
+            <h3>Enjoy</h3>
+            <p>
+              Make space for the experience and let your ritual become part
+              of your everyday rhythm.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="eyebrow">Community notes</div>
+            <h2 class="section-title">
+              Loved by our customers.
+            </h2>
+          </div>
+
+        </div>
+
+        <div class="testimonial-grid">
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              “The packaging is beautiful and the evening tea has become
+              part of my nighttime routine.”
+            </p>
+            <small>— Ayesha, Lahore</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              “I really appreciate how simple and clean the presentation
+              feels. The products make a lovely gift too.”
+            </p>
+            <small>— Sara, Islamabad</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Beautiful branding, easy ordering and carefully presented
+              products. Very pleasant experience.”
+            </p>
+            <small>— Hina, Karachi</small>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Need to know</div>
+            <h2 class="section-title">
+              Frequently asked.
+            </h2>
+          </div>
+        </div>
+
+        <div class="faq">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I place an order?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              Add your products to the bag and proceed to checkout. Connect
+              your preferred payment and delivery system before launching
+              the website publicly.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Where does Dua Harbel deliver?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              This template is configured for a Pakistan-based store.
+              Replace this text with your actual delivery areas and
+              delivery-time information.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Are these products suitable for everyone?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              Product suitability depends on the individual and the specific
+              ingredients. Always provide accurate product information and
+              appropriate professional guidance where needed.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I buy products as gifts?</span>
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              Yes. The botanical collections can be presented as thoughtful
+              gifts. Add your actual gift-packaging options here.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+      <div class="container newsletter-inner">
+
+        <div>
+          <h2>
+            Stay close to<br>the botanicals.
+          </h2>
+
+          <p>
+            Receive new collection announcements, rituals and seasonal
+            botanical stories from Dua Harbel.
+          </p>
+        </div>
+
+        <form class="newsletter-form" id="newsletterForm">
+
+          <input
+            type="email"
+            placeholder="Your email address"
+            aria-label="Email address"
+            required
+          >
+
+          <button type="submit">
+            Subscribe →
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <strong>DUA HARBEL</strong>
+
+          <p>
+            Premium herbal wellness inspired by botanical traditions and
+            designed for modern everyday rituals.
+          </p>
+
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+
+          <ul>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#ritual">The Ritual</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Help</h4>
+
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+
+          <ul>
+            <li>+92 320 8465107</li>
+            <li>duaharbal@gmail.com</li>
+            <li>Lahore, Pakistan</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Dua Harbel. All rights reserved.
+        </span>
+
+        <span>
+          Crafted with botanical intention.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/923208465107"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact Dua Harbel on WhatsApp"
+  >
+    ✆
+  </a>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- CART -->
+  <aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-head">
+      <h3>Your Bag</h3>
+
+      <button class="icon-btn" id="closeCart" aria-label="Close cart">
+        ×
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart">
+        <div>
+          <div style="font-size:35px;margin-bottom:10px;">♡</div>
+          Your bag is currently empty.
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span id="cartTotal">PKR 0</span>
+      </div>
+
+      <button class="btn btn-primary checkout" id="checkoutBtn">
+        Proceed to checkout →
+      </button>
+
+    </div>
+
+  </aside>
+
+  <!-- SEARCH -->
+  <div class="search-modal" id="searchModal">
+
+    <button class="icon-btn search-close" id="closeSearch">
+      ×
+    </button>
+
+    <div class="search-content">
+
+      <label>Search Dua Harbel</label>
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search botanicals..."
+        autocomplete="off"
+      >
+
+      <p style="margin-top:20px;color:rgba(255,255,255,.5);font-size:12px;">
+        Try “tea”, “oil”, “moringa” or “turmeric”.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+
+    /* =========================
+       CART
+    ========================= */
+
+    let cart = JSON.parse(localStorage.getItem("duaHarbelCart")) || [];
+
+    const cartDrawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("overlay");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+
+    function saveCart() {
+      localStorage.setItem("duaHarbelCart", JSON.stringify(cart));
+    }
+
+    function formatPrice(price) {
+      return "PKR " + Number(price).toLocaleString("en-PK");
+    }
+
+    function updateCart() {
+
+      cartCount.textContent = cart.length;
+
+      if (!cart.length) {
+
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div>
+              <div style="font-size:35px;margin-bottom:10px;">♡</div>
+              Your bag is currently empty.
+            </div>
+          </div>
+        `;
+
+        cartTotal.textContent = "PKR 0";
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+
+          <img src="${item.image}" alt="${item.name}">
+
+          <div>
+            <h4>${item.name}</h4>
+            <small>${formatPrice(item.price)}</small>
+          </div>
+
+          <button
+            class="remove-item"
+            onclick="removeFromCart(${index})"
+          >
+            Remove
+          </button>
+
+        </div>
+      `).join("");
+
+      const total = cart.reduce(
+        (sum, item) => sum + Number(item.price),
+        0
+      );
+
+      cartTotal.textContent = formatPrice(total);
+    }
+
+    function addToCart(product) {
+
+      cart.push(product);
+
+      saveCart();
+      updateCart();
+      showToast(product.name + " added to your bag");
+
+      openCart();
+    }
+
+    function removeFromCart(index) {
+
+      const removed = cart[index];
+
+      cart.splice(index, 1);
+
+      saveCart();
+      updateCart();
+
+      if (removed) {
+        showToast(removed.name + " removed");
+      }
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      overlay.classList.add("active");
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove("open");
+      overlay.classList.remove("active");
+    }
+
+    document.getElementById("openCart")
+      .addEventListener("click", openCart);
+
+    document.getElementById("closeCart")
+      .addEventListener("click", closeCart);
+
+    overlay.addEventListener("click", closeCart);
+
+    document.querySelectorAll(".add-product").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        addToCart({
+          name: button.dataset.name,
+          price: Number(button.dataset.price),
+          image: button.dataset.image
+        });
+
+      });
+
+    });
+
+    updateCart();
+
+
+    /* =========================
+       FILTERS
+    ========================= */
+
+    const filters = document.querySelectorAll(".filter");
+    const products = document.querySelectorAll(".product-card");
+
+    filters.forEach(filter => {
+
+      filter.addEventListener("click", () => {
+
+        filters.forEach(item => item.classList.remove("active"));
+        filter.classList.add("active");
+
+        const category = filter.dataset.filter;
+
+        products.forEach(product => {
+
+          if (
+            category === "all" ||
+            product.dataset.category === category
+          ) {
+            product.style.display = "";
+          } else {
+            product.style.display = "none";
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =========================
+       WISHLIST
+    ========================= */
+
+    document.querySelectorAll(".wishlist").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        if (button.textContent.trim() === "♡") {
+
+          button.textContent = "♥";
+          showToast("Added to your wishlist");
+
+        } else {
+
+          button.textContent = "♡";
+          showToast("Removed from your wishlist");
+
+        }
+
+      });
+
+    });
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+
+      question.addEventListener("click", () => {
+
+        const item = question.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+
+          if (other !== item) {
+            other.classList.remove("open");
+          }
+
+        });
+
+        item.classList.toggle("open");
+
+      });
+
+    });
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    const searchModal = document.getElementById("searchModal");
+    const searchInput = document.getElementById("searchInput");
+
+    document.getElementById("openSearch")
+      .addEventListener("click", () => {
+
+        searchModal.classList.add("active");
+
+        setTimeout(() => {
+          searchInput.focus();
+        }, 200);
+
+      });
+
+    document.getElementById("closeSearch")
+      .addEventListener("click", () => {
+
+        searchModal.classList.remove("active");
+
+      });
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        searchModal.classList.remove("active");
+        closeCart();
+      }
+
+    });
+
+    searchInput.addEventListener("input", () => {
+
+      const query = searchInput.value.toLowerCase().trim();
+
+      products.forEach(product => {
+
+        const text = product.textContent.toLowerCase();
+
+        product.style.display =
+          !query || text.includes(query)
+            ? ""
+            : "none";
+
+      });
+
+    });
+
+
+    /* =========================
+       NEWSLETTER
+    ========================= */
+
+    document.getElementById("newsletterForm")
+      .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        showToast("Thank you for subscribing to Dua Harbel");
+
+        event.target.reset();
+
+      });
+
+
+    /* =========================
+       CHECKOUT
+    ========================= */
+
+    document.getElementById("checkoutBtn")
+      .addEventListener("click", () => {
+
+        if (!cart.length) {
+          showToast("Your bag is empty");
+          return;
+        }
+
+        showToast(
+          "Connect your payment/checkout system here."
+        );
+
+      });
+
+
+    /* =========================
+       TOAST
+    ========================= */
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2600);
+
+    }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    document.getElementById("mobileMenu")
+      .addEventListener("click", () => {
+
+        const nav = document.querySelector(".nav-links");
+
+        if (getComputedStyle(nav).display === "none") {
+
+          nav.style.display = "flex";
+          nav.style.position = "absolute";
+          nav.style.top = "70px";
+          nav.style.left = "14px";
+          nav.style.right = "14px";
+          nav.style.padding = "20px";
+          nav.style.flexDirection = "column";
+          nav.style.alignItems = "flex-start";
+          nav.style.background = "#fcfaf5";
+          nav.style.border = "1px solid rgba(24,53,43,.13)";
+          nav.style.borderRadius = "18px";
+          nav.style.boxShadow = "0 20px 50px rgba(0,0,0,.1)";
+
+        } else {
+
+          nav.style.display = "none";
+
+        }
+
+      });
+
+
+    /* =========================
+       IMAGE FALLBACK
+    ========================= */
+
+    document.querySelectorAll("img").forEach(img => {
+
+      img.addEventListener("error", () => {
+
+        img.style.background = "#ddd5c7";
+        img.style.objectFit = "cover";
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
