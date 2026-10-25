@@ -1,1185 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Dua Harbel | Herbal Wellness</title>
-
-  <meta
-    name="description"
-    content="Dua Harbel — thoughtfully crafted herbal wellness products inspired by traditional botanical rituals."
-  />
-  <meta name="theme-color" content="#18352b" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dua Herbal | Shop the Everyday</title>
   <style>
-    :root {
-      --forest: #18352b;
-      --forest-dark: #10271f;
-      --sage: #6d806d;
-      --cream: #f6f1e7;
-      --ivory: #fcfaf5;
-      --sand: #d8c8ad;
-      --clay: #a86748;
-      --gold: #b8935a;
-      --ink: #18231e;
-      --muted: #68736c;
-      --white: #ffffff;
-      --border: rgba(24, 53, 43, .13);
-      --shadow: 0 25px 70px rgba(16, 39, 31, .12);
-      --radius: 22px;
-      --transition: .3s ease;
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--ink);
-      background: var(--ivory);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    button,
-    input {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    /* =========================
-       ANNOUNCEMENT
-    ========================= */
-
-    .announcement {
-      background: var(--forest);
-      color: #fff;
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(252,250,245,.94);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      min-width: 180px;
-    }
-
-    .brand strong {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      letter-spacing: .08em;
-    }
-
-    .brand span {
-      margin-top: 5px;
-      font-size: 9px;
-      letter-spacing: .28em;
-      color: var(--clay);
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .nav-links a {
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--clay);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .icon-btn {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      background: transparent;
-      display: grid;
-      place-items: center;
-      transition: var(--transition);
-    }
-
-    .icon-btn:hover {
-      background: var(--forest);
-      color: white;
-    }
-
-    .cart-button {
-      position: relative;
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -3px;
-      right: -2px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--clay);
-      color: white;
-      font-size: 10px;
-      display: grid;
-      place-items: center;
-    }
-
-    .mobile-toggle {
-      display: none;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      padding: 28px 0 80px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      min-height: 690px;
-      border-radius: 32px;
-      overflow: hidden;
-      background: var(--cream);
-    }
-
-    .hero-copy {
-      padding: 80px 70px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--clay);
-      text-transform: uppercase;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: currentColor;
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(54px, 6vw, 86px);
-      font-weight: 500;
-      line-height: .98;
-      letter-spacing: -.04em;
-      max-width: 620px;
-    }
-
-    .hero h1 em {
-      color: var(--clay);
-      font-style: italic;
-    }
-
-    .hero-text {
-      color: var(--muted);
-      max-width: 490px;
-      margin: 28px 0 35px;
-      font-size: 16px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: 1px solid transparent;
-      border-radius: 999px;
-      padding: 14px 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--forest);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--forest-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: var(--border);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      border-color: var(--forest);
-    }
-
-    .hero-image {
-      position: relative;
-      min-height: 600px;
-    }
-
-    .hero-image img {
-      height: 100%;
-    }
-
-    .hero-image-card {
-      position: absolute;
-      left: 28px;
-      bottom: 28px;
-      background: rgba(252,250,245,.94);
-      backdrop-filter: blur(15px);
-      padding: 18px 20px;
-      width: 210px;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-image-card small {
-      color: var(--muted);
-      display: block;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      margin-bottom: 4px;
-    }
-
-    .hero-image-card strong {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-    }
-
-    /* =========================
-       TRUST
-    ========================= */
-
-    .trust {
-      border-bottom: 1px solid var(--border);
-      border-top: 1px solid var(--border);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .trust-item {
-      padding: 28px 20px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    /* =========================
-       SECTION HEAD
-    ========================= */
-
-    .section {
-      padding: 110px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 45px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1;
-      font-weight: 500;
-      letter-spacing: -.03em;
-    }
-
-    .section-description {
-      max-width: 430px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* =========================
-       CATEGORY CARDS
-    ========================= */
-
-    .categories {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .category {
-      position: relative;
-      height: 470px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      color: white;
-    }
-
-    .category img {
-      height: 100%;
-      transition: transform .7s ease;
-    }
-
-    .category:hover img {
-      transform: scale(1.05);
-    }
-
-    .category::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 30%, rgba(0,0,0,.72));
-    }
-
-    .category-content {
-      position: absolute;
-      z-index: 2;
-      left: 28px;
-      right: 28px;
-      bottom: 28px;
-    }
-
-    .category-content span {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      opacity: .8;
-    }
-
-    .category-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 31px;
-      font-weight: 500;
-      margin: 5px 0 15px;
-    }
-
-    .category-content a {
-      font-size: 12px;
-      border-bottom: 1px solid rgba(255,255,255,.6);
-      padding-bottom: 3px;
-    }
-
-    /* =========================
-       FEATURED PRODUCT
-    ========================= */
-
-    .featured {
-      background: var(--forest);
-      color: white;
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      min-height: 600px;
-    }
-
-    .featured-image img {
-      height: 100%;
-    }
-
-    .featured-copy {
-      padding: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .featured-copy .eyebrow {
-      color: #d7b886;
-    }
-
-    .featured-copy h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 5vw, 65px);
-      line-height: 1;
-      font-weight: 500;
-      margin-bottom: 22px;
-    }
-
-    .featured-copy p {
-      color: rgba(255,255,255,.68);
-      max-width: 460px;
-      margin-bottom: 28px;
-    }
-
-    .ingredient-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 30px;
-    }
-
-    .ingredient {
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 100px;
-      padding: 8px 13px;
-      font-size: 11px;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products-section {
-      background: var(--cream);
-    }
-
-    .filter-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 35px;
-    }
-
-    .filter {
-      border: 1px solid var(--border);
-      background: transparent;
-      border-radius: 100px;
-      padding: 10px 17px;
-      font-size: 12px;
-      transition: var(--transition);
-    }
-
-    .filter.active,
-    .filter:hover {
-      background: var(--forest);
-      color: white;
-      border-color: var(--forest);
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .product-card {
-      position: relative;
-    }
-
-    .product-image {
-      height: 350px;
-      overflow: hidden;
-      border-radius: 18px;
-      background: #e9e1d4;
-      position: relative;
-    }
-
-    .product-image img {
-      height: 100%;
-      transition: transform .5s ease;
-    }
-
-    .product-card:hover .product-image img {
-      transform: scale(1.04);
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      z-index: 2;
-      background: white;
-      border-radius: 100px;
-      padding: 6px 10px;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-
-    .wishlist {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      z-index: 3;
-      width: 37px;
-      height: 37px;
-      border-radius: 50%;
-      border: 0;
-      background: rgba(255,255,255,.9);
-      font-size: 17px;
-    }
-
-    .product-info {
-      padding: 16px 4px;
-    }
-
-    .product-category {
-      color: var(--clay);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      font-weight: 700;
-    }
-
-    .product-info h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 21px;
-      font-weight: 500;
-      margin: 5px 0;
-    }
-
-    .product-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .price {
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .add-product {
-      border: 1px solid var(--border);
-      background: transparent;
-      border-radius: 100px;
-      padding: 7px 12px;
-      font-size: 10px;
-      transition: var(--transition);
-    }
-
-    .add-product:hover {
-      background: var(--forest);
-      color: white;
-    }
-
-    /* =========================
-       STORY
-    ========================= */
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .story-image {
-      position: relative;
-    }
-
-    .story-image img {
-      height: 620px;
-      border-radius: 28px;
-    }
-
-    .story-label {
-      position: absolute;
-      bottom: 25px;
-      right: -25px;
-      background: var(--clay);
-      color: white;
-      width: 145px;
-      height: 145px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      transform: rotate(-8deg);
-    }
-
-    .story-copy h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 5vw, 62px);
-      line-height: 1;
-      font-weight: 500;
-      margin-bottom: 25px;
-    }
-
-    .story-copy p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .story-points {
-      margin: 30px 0;
-      display: grid;
-      gap: 18px;
-    }
-
-    .story-point {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-    }
-
-    .story-number {
-      width: 30px;
-      height: 30px;
-      flex: 0 0 30px;
-      border-radius: 50%;
-      background: var(--cream);
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-      color: var(--clay);
-    }
-
-    .story-point strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 2px;
-    }
-
-    .story-point span {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* =========================
-       RITUAL
-    ========================= */
-
-    .ritual {
-      background: #eee7d9;
-    }
-
-    .ritual-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .ritual-card {
-      background: var(--ivory);
-      padding: 35px;
-      border-radius: 20px;
-    }
-
-    .ritual-number {
-      color: var(--clay);
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-    }
-
-    .ritual-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      font-weight: 500;
-      margin: 45px 0 10px;
-    }
-
-    .ritual-card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =========================
-       TESTIMONIALS
-    ========================= */
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .testimonial {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-    }
-
-    .stars {
-      color: var(--gold);
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    .testimonial p {
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      line-height: 1.45;
-      margin-bottom: 25px;
-    }
-
-    .testimonial small {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    /* =========================
-       FAQ
-    ========================= */
-
-    .faq-section {
-      background: var(--cream);
-    }
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-question {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 23px 0;
-      display: flex;
-      justify-content: space-between;
-      text-align: left;
-      font-weight: 600;
-    }
-
-    .faq-icon {
-      transition: transform .3s;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      color: var(--muted);
-      font-size: 13px;
-      transition: max-height .35s ease, padding .35s ease;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding-bottom: 22px;
-    }
-
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    /* =========================
-       NEWSLETTER
-    ========================= */
-
-    .newsletter {
-      background: var(--forest);
-      color: white;
-      padding: 80px 0;
-    }
-
-    .newsletter-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
-
-    .newsletter h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 55px);
-      line-height: 1;
-      font-weight: 500;
-    }
-
-    .newsletter p {
-      color: rgba(255,255,255,.65);
-      max-width: 430px;
-      margin-top: 12px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      min-width: min(100%, 450px);
-      border-bottom: 1px solid rgba(255,255,255,.3);
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: white;
-      padding: 14px 0;
-    }
-
-    .newsletter-form input::placeholder {
-      color: rgba(255,255,255,.45);
-    }
-
-    .newsletter-form button {
-      border: 0;
-      background: transparent;
-      color: white;
-      font-weight: 700;
-      padding: 14px 0 14px 15px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: var(--forest-dark);
-      color: white;
-      padding: 70px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
-      gap: 45px;
-      padding-bottom: 60px;
-    }
-
-    .footer-brand strong {
-      font-family: "Playfair Display", serif;
-      font-size: 29px;
-      letter-spacing: .08em;
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,.5);
-      max-width: 290px;
-      margin-top: 15px;
-      font-size: 12px;
-    }
-
-    footer h4 {
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      color: #d7b886;
-    }
-
-    footer ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    footer li {
-      color: rgba(255,255,255,.58);
-      font-size: 12px;
-    }
-
-    footer li:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,.1);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: rgba(255,255,255,.4);
-      font-size: 10px;
-    }
-
-    /* =========================
-       CART DRAWER
-    ========================= */
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.42);
-      z-index: 150;
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-    }
-
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .cart-drawer {
-      position: fixed;
-      z-index: 160;
-      top: 0;
-      right: 0;
-      width: min(430px, 100%);
-      height: 100vh;
-      background: var(--ivory);
-      transform: translateX(100%);
-      transition: transform .35s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart-drawer.open {
-      transform: translateX(0);
-    }
-
-    .cart-head {
-      padding: 25px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cart-head h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      font-weight: 500;
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-    }
-
-    .empty-cart {
-      height: 100%;
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      text-align: center;
-      font-size: 13px;
-    }
-
-    .cart-item {
-      display: grid;
-      grid-template-columns: 75px 1fr auto;
-      gap: 13px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cart-item img {
-      width: 75px;
-      height: 85px;
-      border-radius: 10px;
-    }
-
-    .cart-item h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .cart-item small {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .remove-item {
-      border: 0;
-      background: transparent;
-      color: var(--clay);
-      font-size: 11px;
-    }
-
-    .cart-footer {
-      border-top: 1px solid var(--border);
-      padding: 20px;
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .checkout {
-      width: 100%;
-    }
-
-    /* =========================
-       SEARCH
-    ========================= */
-
-    .search-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 180;
-      background: rgba(16,39,31,.97);
-      color: white;
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-      padding: 35px;
-    }
-
-    .search-modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .search-close {
-      position: absolute;
-      right: 35px;
-      top: 30px;
-      color: white;
-      border: 1px solid rgba(255,255,255,.2);
-    }
-
-    .search-content {
-      max-width: 800px;
-      margin: 18vh auto 0;
-    }
-
-    .search-content label {
-      color: #d7b886;
-      text-transform: uppercase;
-      letter-spacing: .2em;
-      font-size: 10px;
-    }
-
-    .search-content input {
-      width: 100%;
-      background: transparent;
-      border: 0;
-      border-bottom: 1px solid rgba(255,255,255,.3);
-      color: white;
-      outline: 0;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 7vw, 80px);
-      padding: 15px 0;
-    }
-
-    /* =========================
-       TOAST
-    ========================= */
-
-    .toast {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translate(-50%, 100px);
-      background: var(--forest);
-      color: white;
-      padding: 13px 20px;
-      border-radius: 100px;
-      font-size: 12px;
-      z-index: 300;
-      opacity: 0;
-      transition: .35s;
-    }
-
-    .toast.show {
-      transform: translate(-50%, 0);
-      opacity: 1;
-    }
-
-    /* =========================
+      /* =========================
        WHATSAPP
     ========================= */
 
@@ -1191,7 +19,7 @@
       width: 53px;
       height: 53px;
       border-radius: 50%;
-      background: #198754;
+      background: white;
       color: white;
       display: grid;
       place-items: center;
@@ -1199,1185 +27,202 @@
       font-size: 21px;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
 
-    @media (max-width: 1000px) {
-      .nav-links {
-        display: none;
-      }
 
-      .mobile-toggle {
-        display: grid;
-      }
-
-      .hero-grid,
-      .featured-grid,
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        padding: 60px 45px;
-      }
-
-      .hero-image {
-        min-height: 500px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .categories {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .category:first-child {
-        grid-column: span 2;
-      }
-
-      .featured-copy {
-        padding: 60px 45px;
-      }
-
-      .story-image {
-        max-width: 600px;
-      }
-
-      .newsletter-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    :root {
+      --ink: #17211d;
+      --muted: #69736d;
+      --paper: #f7f7f2;
+      --card: #ffffff;
+      --green: #245c46;
+      --green-dark: #174331;
+      --lime: #d9f27a;
+      --line: #e5e8df;
+      --radius: 18px;
     }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .announcement { background: var(--green-dark); color: white; text-align: center; padding: 9px 14px; font-size: 12px; letter-spacing: .08em; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(247,247,242,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1180px; margin: auto; padding: 17px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font-size: 24px; font-weight: 900; letter-spacing: -.07em; text-decoration: none; color: var(--ink); }
+    .logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .nav-links a { color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 650; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn { border: 1px solid var(--line); background: white; border-radius: 999px; padding: 10px 14px; color: var(--ink); font-weight: 700; }
+    .cart-count { display: inline-grid; place-items: center; background: var(--lime); border-radius: 50%; width: 20px; height: 20px; margin-left: 5px; font-size: 11px; }
+    .hero { max-width: 1180px; margin: 26px auto 0; padding: 0 24px; }
+    .hero-panel { min-height: 410px; overflow: hidden; border-radius: 28px; background: var(--green); color: white; display: grid; grid-template-columns: 1.05fr .95fr; position: relative; }
+    .hero-copy { padding: clamp(34px, 6vw, 72px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; z-index: 1; }
+    .eyebrow { text-transform: uppercase; font-size: 11px; letter-spacing: .18em; font-weight: 800; color: var(--lime); }
+    h1 { font-size: clamp(42px, 6vw, 72px); line-height: .98; letter-spacing: -.065em; margin: 18px 0; max-width: 560px; }
+    .hero-copy p { max-width: 390px; color: #d9e5dc; line-height: 1.7; font-size: 15px; margin: 0 0 26px; }
+    .primary-btn { border: 0; border-radius: 999px; padding: 14px 22px; background: var(--lime); color: var(--ink); font-weight: 800; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; gap: 8px; }
+    .hero-art { min-height: 320px; display: grid; place-items: center; position: relative; background: radial-gradient(circle at 60% 42%, #709e74 0, #397457 35%, #245c46 72%); }
+    .hero-art:before, .hero-art:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; width: 320px; height: 320px; }
+    .hero-art:after { width: 430px; height: 430px; }
+    .hero-art img { width: min(78%, 360px); aspect-ratio: 1; object-fit: cover; border-radius: 50%; transform: rotate(-5deg); z-index: 1; box-shadow: 0 25px 60px #102f2480; }
+    .trust-row { max-width: 1180px; padding: 22px 24px; margin: auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .trust-item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.55); }
+    .trust-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #eaf1df; font-size: 18px; }
+    .trust-item strong { display: block; font-size: 13px; }
+    .trust-item small { color: var(--muted); font-size: 11px; }
+    .shop { max-width: 1180px; margin: 38px auto 80px; padding: 0 24px; }
+    .section-top { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+    .section-top h2 { margin: 7px 0 0; font-size: clamp(28px,4vw,40px); letter-spacing: -.055em; }
+    .section-top p { margin: 0; color: var(--muted); font-size: 13px; }
+    .tools { display: flex; gap: 10px; margin-bottom: 22px; }
+    .search { flex: 1; min-width: 0; border: 1px solid var(--line); background: white; border-radius: 999px; padding: 12px 17px; outline-color: var(--green); }
+    .filter { border: 1px solid var(--line); background: white; border-radius: 999px; padding: 12px 15px; color: var(--ink); }
+    .categories { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .category { border: 1px solid var(--line); border-radius: 999px; padding: 9px 15px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 750; }
+    .category.active { background: var(--green); border-color: var(--green); color: white; }
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; }
+    .product-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 35px #183c2410; }
+    .product-image { position: relative; background: #edf0e8; overflow: hidden; }
+    .product-image img { width: 100%; aspect-ratio: 1 / .94; object-fit: cover; display: block; transition: transform .3s; }
+    .product-card:hover .product-image img { transform: scale(1.04); }
+    .badge { position: absolute; top: 12px; left: 12px; border-radius: 999px; background: white; padding: 6px 9px; font-size: 10px; font-weight: 800; }
+    .product-info { padding: 16px; }
+    .product-category { color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+    .product-info h3 { margin: 7px 0 8px; font-size: 15px; }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .price { font-weight: 850; font-size: 15px; }
+    .add-btn { border: 0; background: var(--green); color: white; border-radius: 999px; width: 36px; height: 36px; font-size: 22px; line-height: 1; }
+    .add-btn:hover { background: var(--green-dark); }
+    .variant-select { width: 100%; margin: 10px 0 12px; border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; background: #fff; color: var(--ink); font-size: 12px; }
+    .product-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .product-actions button { border-radius: 999px; padding: 10px 8px; font-size: 11px; font-weight: 800; }
+    .add-cart-btn { border: 1px solid var(--green); background: white; color: var(--green); }
+    .buy-now-btn { border: 1px solid var(--green); background: var(--green); color: white; }
+    .product-actions button:hover { filter: brightness(.95); }
+    .empty { grid-column: 1/-1; padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
+    .newsletter { background: #e8eddf; padding: 44px 24px; }
+    .newsletter-inner { max-width: 760px; margin: auto; text-align: center; }
+    .newsletter h2 { font-size: clamp(26px,4vw,38px); letter-spacing: -.05em; margin: 0 0 10px; }
+    .newsletter p { color: var(--muted); font-size: 14px; }
+    .newsletter-form { display: flex; max-width: 460px; margin: 20px auto 0; gap: 8px; }
+    .newsletter-form input { min-width: 0; flex: 1; border: 1px solid #d5ddcc; background: white; border-radius: 999px; padding: 13px 16px; }
+    footer { background: var(--ink); color: white; padding: 26px 24px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    footer p { color: #b9c5bd; font-size: 12px; margin: 0; }
+    .overlay { position: fixed; inset: 0; background: #101b16a8; z-index: 20; opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .overlay.show { opacity: 1; pointer-events: auto; }
+    .cart-drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(440px, 100%); background: var(--paper); z-index: 21; transform: translateX(100%); transition: transform .25s; display: flex; flex-direction: column; }
+    .cart-drawer.show { transform: translateX(0); }
+    .drawer-head { padding: 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+    .drawer-head h2 { margin: 0; letter-spacing: -.04em; }
+    .close-btn { border: 1px solid var(--line); background: white; border-radius: 50%; width: 38px; height: 38px; font-size: 20px; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 12px 22px; }
+    .cart-item { display: grid; grid-template-columns: 74px 1fr auto; gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--line); align-items: center; }
+    .cart-item img { width: 74px; height: 74px; object-fit: cover; border-radius: 12px; }
+    .cart-item h4 { margin: 0 0 5px; font-size: 13px; }
+    .cart-item small { color: var(--muted); }
+    .qty { display: flex; align-items: center; gap: 9px; margin-top: 9px; }
+    .qty button { border: 1px solid var(--line); background: white; border-radius: 50%; width: 25px; height: 25px; }
+    .remove { border: 0; background: transparent; color: #8b5149; font-size: 11px; padding: 5px 0; }
+    .cart-footer { padding: 20px 22px; border-top: 1px solid var(--line); background: white; }
+    .subtotal { display: flex; justify-content: space-between; font-weight: 850; margin-bottom: 8px; }
+    .cart-note { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 0 0 15px; }
+    .checkout-btn { width: 100%; border: 0; border-radius: 999px; padding: 15px; background: var(--green); color: white; font-weight: 800; }
+    .checkout-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .modal-wrap { position: fixed; inset: 0; background: #101b168a; z-index: 30; display: none; align-items: center; justify-content: center; padding: 18px; overflow-y: auto; }
+    .modal-wrap.show { display: flex; }
+    .modal { width: min(560px,100%); max-height: 95vh; overflow-y: auto; background: var(--paper); border-radius: 22px; padding: 26px; }
+    .modal-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+    .modal h2 { margin: 0 0 8px; letter-spacing: -.05em; }
+    .modal p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin: 20px 0; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1/-1; }
+    .field label { font-size: 12px; font-weight: 750; }
+    .field input, .field textarea, .field select { border: 1px solid var(--line); border-radius: 11px; padding: 12px; background: white; width: 100%; outline-color: var(--green); }
+    .field textarea { resize: vertical; min-height: 72px; }
+    .order-summary { background: #edf0e8; border-radius: 13px; padding: 14px; margin: 14px 0; font-size: 13px; }
+    .toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 20px); background: var(--ink); color: white; border-radius: 999px; padding: 12px 18px; font-size: 13px; z-index: 50; opacity: 0; pointer-events: none; transition: .2s; }
+    .toast.show { opacity: 1; transform: translate(-50%,0); }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .hero-panel { grid-template-columns: 1fr .8fr; } .nav-links { gap: 14px; } }
     @media (max-width: 650px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .announcement {
-        font-size: 9px;
-      }
-
-      .nav {
-        height: 70px;
-      }
-
-      .brand strong {
-        font-size: 22px;
-      }
-
-      .brand span {
-        font-size: 7px;
-      }
-
-      .nav-actions .search-btn {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 14px;
-      }
-
-      .hero-grid {
-        border-radius: 22px;
-      }
-
-      .hero-copy {
-        padding: 50px 25px;
-      }
-
-      .hero h1 {
-        font-size: 50px;
-      }
-
-      .hero-image {
-        min-height: 400px;
-      }
-
-      .hero-image-card {
-        left: 15px;
-        bottom: 15px;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .trust-item {
-        border-bottom: 1px solid var(--border);
-      }
-
-      .section {
-        padding: 75px 0;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-description {
-        margin-top: 15px;
-      }
-
-      .categories {
-        grid-template-columns: 1fr;
-      }
-
-      .category:first-child {
-        grid-column: auto;
-      }
-
-      .category {
-        height: 380px;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 13px;
-      }
-
-      .product-image {
-        height: 260px;
-      }
-
-      .featured-copy {
-        padding: 55px 25px;
-      }
-
-      .story-grid {
-        gap: 45px;
-      }
-
-      .story-image img {
-        height: 480px;
-      }
-
-      .story-label {
-        width: 110px;
-        height: 110px;
-        right: -5px;
-      }
-
-      .ritual-grid,
-      .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter {
-        padding: 65px 0;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-      }
-
-      .footer-brand {
-        grid-column: span 2;
-      }
-
-      .footer-bottom {
-        display: block;
-      }
-
-      .footer-bottom span {
-        display: block;
-        margin-bottom: 5px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-        animation: none !important;
-      }
+      .nav { padding: 14px 17px; } .nav-links { display: none; } .hero { padding: 0 14px; margin-top: 14px; } .hero-panel { grid-template-columns: 1fr; } .hero-copy { padding: 36px 26px 28px; } .hero-art { min-height: 240px; } .hero-art img { width: 210px; } .hero-art:before { width: 220px; height: 220px; } .hero-art:after { width: 290px; height: 290px; }
+      .trust-row { padding: 16px 14px; grid-template-columns: 1fr; } .shop { padding: 0 14px; margin-top: 26px; } .section-top { align-items: start; flex-direction: column; } .tools { flex-direction: column; } .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px; } .product-info { padding: 12px; } .product-info h3 { font-size: 13px; } .price { font-size: 13px; } .badge { top: 8px; left: 8px; } .newsletter-form { flex-direction: column; } .form-grid { grid-template-columns: 1fr; } .field.full { grid-column: auto; }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- ANNOUNCEMENT -->
-  <div class="announcement">
-    Complimentary delivery on orders over PKR 5,000
-  </div>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-
-      <a href="#" class="brand">
-        <strong>DUA HARBEL</strong>
-        <span>Herbal Wellness</span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#shop">Shop</a>
-        <a href="#collections">Collections</a>
-        <a href="#story">Our Story</a>
-        <a href="#ritual">The Ritual</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
-      <div class="nav-actions">
-
-        <button class="icon-btn search-btn" id="openSearch" aria-label="Search">
-          ⌕
-        </button>
-
-        <button class="icon-btn" id="mobileMenu" aria-label="Menu">
-          ☰
-        </button>
-
-        <button class="icon-btn cart-button" id="openCart" aria-label="Shopping cart">
-          ♡
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-
+  <div class="announcement">COMPLIMENTARY SHIPPING ON ORDERS OVER Rs.35000 · MADE FOR EVERYDAY LIVING</div>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#">Dua Herbal<span>.</span></a>
+      <div class="nav-links">
+        <a href="#shop">Home</a><a href="#contact">Contact Us</a>
       </div>
-    </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="openCart" aria-label="Open shopping cart">Bag <span class="cart-count" id="cartCount">0</span></button>
+      </div>
+    </nav>
   </header>
 
-  <!-- HERO -->
   <main>
-
     <section class="hero">
-      <div class="container">
-
-        <div class="hero-grid">
-
-          <div class="hero-copy">
-
-            <div class="eyebrow">
-              Botanical living
-            </div>
-
-            <h1>
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Thoughtful things, everyday</span>
+         <h1>
               Nature, made into a
               <em>daily ritual.</em>
             </h1>
-
-            <p class="hero-text">
-              Discover carefully selected herbal blends and botanical products
-              created to bring a more intentional rhythm to everyday wellness.
-            </p>
-
-            <div class="hero-buttons">
-              <a href="#shop" class="btn btn-primary">
-                Explore collection →
-              </a>
-
-              <a href="#story" class="btn btn-outline">
-                Our philosophy
-              </a>
-            </div>
-
-          </div>
-
-          <div class="hero-image">
-            <img
-              src="img/majoon1.jpeg"
-              alt="zafraan majoon"
-            >
-
-            <div class="hero-image-card">
-              <small>Featured ritual</small>
-              <strong>Al Khas Zafraan Majoon</strong>
-            </div>
-          </div>
-
+          <p>Discover carefully selected herbal blends and botanical products created to bring a more intentional rhythm to everyday wellness.</p>
+          <a class="primary-btn" href="#shop">Explore the collection <span>↗</span></a>
         </div>
-
+        <div class="hero-art">
+          <img src="img/majoon1.jpeg" alt="Minimal notebook and everyday stationery">
+        </div>
       </div>
     </section>
 
-    <!-- TRUST -->
-    <section class="trust">
-      <div class="container trust-grid">
-
-        <div class="trust-item">
-          <strong>Botanical</strong>
-          <span>Thoughtfully selected ingredients</span>
-        </div>
-
-        <div class="trust-item">
-          <strong>Small Batch</strong>
-          <span>Made with care and attention</span>
-        </div>
-
-        <div class="trust-item">
-          <strong>Simple</strong>
-          <span>Clear and considered formulas</span>
-        </div>
-
-        <div class="trust-item">
-          <strong>Pakistan</strong>
-          <span>Proudly crafted locally</span>
-        </div>
-
-      </div>
+    <section class="trust-row" id="about" aria-label="Store benefits">
+      <div class="trust-item"><div class="trust-icon">✦</div><div><strong>Thoughtfully selected</strong><small>Quality over quantity</small></div></div>
+      <div class="trust-item"><div class="trust-icon">↗</div><div><strong>Easy, simple shopping</strong><small>A smooth checkout experience</small></div></div>
+      <div class="trust-item"><div class="trust-icon">♡</div><div><strong>Made for your routine</strong><small>Useful things, lovely details</small></div></div>
     </section>
 
-    <!-- COLLECTIONS -->
-    <section class="section" id="collections">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-            <div class="eyebrow">Explore</div>
-            <h2 class="section-title">
-              Botanical collections
-            </h2>
-          </div>
-
-          <p class="section-description">
-            Explore our thoughtfully curated categories, created around
-            simple and meaningful daily rituals.
-          </p>
-
-        </div>
-
-        <div class="categories">
-
-          <article class="category">
-            <img
-              src="img/majoon2.jpeg"
-              alt="Majoon Kastori"
-            >
-
-            <div class="category-content">
-              <span>01 / Infusions</span>
-              <h3>Al Khas Kastori Majoon</h3>
-              <a href="#shop">Explore collection →</a>
-            </div>
-          </article>
-
-          <article class="category">
-            <img
-              src="img/5.jpeg"
-              alt="Herbal"
-            >
-
-            <div class="category-content">
-              <span>02 / Botanicals</span>
-              <h3>Natural</h3>
-              <a href="#shop">Explore collection →</a>
-            </div>
-          </article>
-
-          <article class="category">
-            <img
-              src="img/6.jpeg"
-              alt="Herbal"
-            >
-
-            <div class="category-content">
-              <span>03 / Blends</span>
-              <h3>Herbal</h3>
-              <a href="#shop">Explore collection →</a>
-            </div>
-          </article>
-
-        </div>
-
+    <section class="shop" id="shop">
+      <div class="section-top">
+        <div><span class="eyebrow" style="color:var(--green)">The collection</span><h2>Find your new favorite.</h2></div>
+        <p id="resultCount">8 carefully picked essentials</p>
       </div>
+      <div class="tools">
+        <input class="search" id="searchInput" type="search" placeholder="Search products..." aria-label="Search products">
+        <select class="filter" id="sortSelect" aria-label="Sort products">
+          <option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="name">Name: A to Z</option>
+        </select>
+      </div>
+      <div class="categories" id="categories"></div>
+      <div class="product-grid" id="productGrid"></div>
     </section>
 
-    <!-- FEATURED -->
-    <section class="featured">
-
-      <div class="featured-grid">
-
-        <div class="featured-image">
-          <img
-            src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85"
-            alt="Dua Harbel botanical tea"
-          >
-        </div>
-
-        <div class="featured-copy">
-
-          <div class="eyebrow">
-            Signature blend
-          </div>
-
-          <h2>
-            The Evening
-            Botanical Ritual
-          </h2>
-
-          <p>
-            A carefully composed herbal tea blend designed for a quiet,
-            comforting evening moment. Make your cup, slow down, and enjoy
-            the ritual.
-          </p>
-
-          <div class="ingredient-list">
-            <span class="ingredient">Chamomile</span>
-            <span class="ingredient">Rose</span>
-            <span class="ingredient">Lemongrass</span>
-            <span class="ingredient">Mint</span>
-          </div>
-
-          <a href="#shop" class="btn btn-primary" style="background:#d7b886;color:#18352b;width:max-content;">
-            Shop signature blend →
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PRODUCTS 
-    <section class="section products-section" id="shop">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-            <div class="eyebrow">The collection</div>
-            <h2 class="section-title">
-              Shop botanicals
-            </h2>
-          </div>
-
-          <p class="section-description">
-            Explore our current selection of teas, oils and herbal blends.
-          </p>
-
-        </div>
-
-        <div class="filter-row">
-
-          <button class="filter active" data-filter="all">
-            All
-          </button>
-
-          <button class="filter" data-filter="tea">
-            Teas
-          </button>
-
-          <button class="filter" data-filter="oil">
-            Oils
-          </button>
-
-          <button class="filter" data-filter="powder">
-            Powders
-          </button>
-
-          <button class="filter" data-filter="blend">
-            Blends
-          </button>
-
-        </div>
-
-        <div class="product-grid" id="productGrid">
-
-          <!-- PRODUCT 1 
-          <article class="product-card" data-category="tea">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                Bestseller
-              </span>
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1597318181409-cf64d0d3d3f1?auto=format&fit=crop&w=800&q=85"
-                alt="Dua Harbel Signature Green Tea"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Tea</span>
-
-              <h3>Signature Green Tea</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,450</span>
-
-                <button
-                  class="add-product"
-                  data-name="Signature Green Tea"
-                  data-price="1450"
-                  data-image="https://images.unsplash.com/photo-1597318181409-cf64d0d3d3f1?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 2
-          <article class="product-card" data-category="tea">
-
-            <div class="product-image">
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=85"
-                alt="Evening Herbal Tea"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Tea</span>
-
-              <h3>Evening Herbal Tea</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,650</span>
-
-                <button
-                  class="add-product"
-                  data-name="Evening Herbal Tea"
-                  data-price="1650"
-                  data-image="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 3 
-          <article class="product-card" data-category="oil">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                New
-              </span>
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=85"
-                alt="Botanical Hair Oil"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Oil</span>
-
-              <h3>Botanical Hair Oil</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,850</span>
-
-                <button
-                  class="add-product"
-                  data-name="Botanical Hair Oil"
-                  data-price="1850"
-                  data-image="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 4 
-          <article class="product-card" data-category="powder">
-
-            <div class="product-image">
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1603905179139-db12ab535e2c?auto=format&fit=crop&w=800&q=85"
-                alt="Organic Moringa Powder"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Powder</span>
-
-              <h3>Moringa Leaf Powder</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,200</span>
-
-                <button
-                  class="add-product"
-                  data-name="Moringa Leaf Powder"
-                  data-price="1200"
-                  data-image="https://images.unsplash.com/photo-1603905179139-db12ab535e2c?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 5 
-          <article class="product-card" data-category="blend">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                Popular
-              </span>
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
-                alt="Digestive Botanical Blend"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Blend</span>
-
-              <h3>Digestive Botanical Blend</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,550</span>
-
-                <button
-                  class="add-product"
-                  data-name="Digestive Botanical Blend"
-                  data-price="1550"
-                  data-image="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 6 
-          <article class="product-card" data-category="oil">
-
-            <div class="product-image">
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1611073762568-7e8b5f8b5e5a?auto=format&fit=crop&w=800&q=85"
-                alt="Rose Botanical Oil"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Oil</span>
-
-              <h3>Rose Botanical Oil</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,950</span>
-
-                <button
-                  class="add-product"
-                  data-name="Rose Botanical Oil"
-                  data-price="1950"
-                  data-image="https://images.unsplash.com/photo-1611073762568-7e8b5f8b5e5a?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 7 
-          <article class="product-card" data-category="tea">
-
-            <div class="product-image">
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=85"
-                alt="Mint Botanical Tea"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Tea</span>
-
-              <h3>Fresh Mint Tea</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,250</span>
-
-                <button
-                  class="add-product"
-                  data-name="Fresh Mint Tea"
-                  data-price="1250"
-                  data-image="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-          <!-- PRODUCT 8
-          <article class="product-card" data-category="powder">
-
-            <div class="product-image">
-
-              <button class="wishlist" aria-label="Add to wishlist">
-                ♡
-              </button>
-
-              <img
-                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=85"
-                alt="Turmeric Botanical Powder"
-              >
-
-            </div>
-
-            <div class="product-info">
-
-              <span class="product-category">Powder</span>
-
-              <h3>Golden Turmeric Powder</h3>
-
-              <div class="product-meta">
-                <span class="price">PKR 1,100</span>
-
-                <button
-                  class="add-product"
-                  data-name="Golden Turmeric Powder"
-                  data-price="1100"
-                  data-image="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=85"
-                >
-                  Add to bag
-                </button>
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section> -->
-
-    <!-- STORY -->
-    <section class="section" id="story">
-
-      <div class="container story-grid">
-
-        <div class="story-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=1000&q=85"
-            alt="Natural botanical ingredients"
-          >
-
-          <div class="story-label">
-            Rooted in<br>nature
-          </div>
-
-        </div>
-
-        <div class="story-copy">
-
-          <div class="eyebrow">
-            The Dua Harbel story
-          </div>
-
-          <h2>
-            Ancient botanicals.
-            Modern rituals.
-          </h2>
-
-          <p>
-            Dua Harbel was created around a simple idea: wellness does not
-            have to feel complicated.
-          </p>
-
-          <p>
-            We bring together traditional botanical ingredients and a
-            thoughtful modern approach to create products that fit naturally
-            into everyday life.
-          </p>
-
-          <div class="story-points">
-
-            <div class="story-point">
-              <div class="story-number">01</div>
-              <div>
-                <strong>Thoughtful sourcing</strong>
-                <span>Ingredients selected with care and transparency.</span>
-              </div>
-            </div>
-
-            <div class="story-point">
-              <div class="story-number">02</div>
-              <div>
-                <strong>Simple formulations</strong>
-                <span>Clear ingredients without unnecessary complexity.</span>
-              </div>
-            </div>
-
-            <div class="story-point">
-              <div class="story-number">03</div>
-              <div>
-                <strong>Made for rituals</strong>
-                <span>Designed to become meaningful everyday habits.</span>
-              </div>
-            </div>
-
-          </div>
-
-          <a href="#ritual" class="btn btn-outline">
-            Discover our approach →
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- RITUAL -->
-    <section class="section ritual" id="ritual">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-            <div class="eyebrow">A slower approach</div>
-            <h2 class="section-title">
-              Make wellness a ritual.
-            </h2>
-          </div>
-
-          <p class="section-description">
-            Small moments can become meaningful routines when we give them
-            our attention.
-          </p>
-
-        </div>
-
-        <div class="ritual-grid">
-
-          <article class="ritual-card">
-            <span class="ritual-number">01</span>
-            <h3>Choose</h3>
-            <p>
-              Select a botanical product that fits naturally into your
-              routine.
-            </p>
-          </article>
-
-          <article class="ritual-card">
-            <span class="ritual-number">02</span>
-            <h3>Prepare</h3>
-            <p>
-              Slow down for a moment and prepare your tea, blend or oil with
-              intention.
-            </p>
-          </article>
-
-          <article class="ritual-card">
-            <span class="ritual-number">03</span>
-            <h3>Enjoy</h3>
-            <p>
-              Make space for the experience and let your ritual become part
-              of your everyday rhythm.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-            <div class="eyebrow">Community notes</div>
-            <h2 class="section-title">
-              Loved by our customers.
-            </h2>
-          </div>
-
-        </div>
-
-        <div class="testimonial-grid">
-
-          <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-              “The packaging is beautiful and the evening tea has become
-              part of my nighttime routine.”
-            </p>
-            <small>— Ayesha, Lahore</small>
-          </article>
-
-          <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-              “I really appreciate how simple and clean the presentation
-              feels. The products make a lovely gift too.”
-            </p>
-            <small>— Sara, Islamabad</small>
-          </article>
-
-          <article class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-              “Beautiful branding, easy ordering and carefully presented
-              products. Very pleasant experience.”
-            </p>
-            <small>— Hina, Karachi</small>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- FAQ 
-    <section class="section faq-section" id="faq">
-
-      <div class="container">
-
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Need to know</div>
-            <h2 class="section-title">
-              Frequently asked.
-            </h2>
-          </div>
-        </div>
-
-        <div class="faq">
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>How do I place an order?</span>
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              Add your products to the bag and proceed to checkout. Connect
-              your preferred payment and delivery system before launching
-              the website publicly.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Where does Dua Harbel deliver?</span>
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              This template is configured for a Pakistan-based store.
-              Replace this text with your actual delivery areas and
-              delivery-time information.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Are these products suitable for everyone?</span>
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              Product suitability depends on the individual and the specific
-              ingredients. Always provide accurate product information and
-              appropriate professional guidance where needed.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can I buy products as gifts?</span>
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              Yes. The botanical collections can be presented as thoughtful
-              gifts. Add your actual gift-packaging options here.
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-
-    <!-- NEWSLETTER -->
     <section class="newsletter">
-
-      <div class="container newsletter-inner">
-
-        <div>
-          <h2>
-            Stay close to<br>the botanicals.
-          </h2>
-
-          <p>
-            Receive new collection announcements, rituals and seasonal
-            botanical stories from Dua Harbel.
-          </p>
-        </div>
-
+      <div class="newsletter-inner">
+        <span class="eyebrow" style="color:var(--green)">A little good news</span>
+        <h2>Good things, straight to your inbox.</h2>
+        <p>Get product updates, thoughtful ideas, and occasional treats. No clutter, promise.</p>
         <form class="newsletter-form" id="newsletterForm">
-
-          <input
-            type="email"
-            placeholder="Your email address"
-            aria-label="Email address"
-            required
-          >
-
-          <button type="submit">
-            Subscribe →
-          </button>
-
+          <input type="email" placeholder="Your email address" aria-label="Your email address" required>
+          <button class="primary-btn" type="submit">Sign me up ↗</button>
         </form>
-
       </div>
-
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-
-          <strong>DUA HARBEL</strong>
-
-          <p>
-            Premium herbal wellness inspired by botanical traditions and
-            designed for modern everyday rituals.
-          </p>
-
-        </div>
-
-        <div>
-          <h4>Explore</h4>
-
-          <ul>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#ritual">The Ritual</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Help</h4>
-
-          <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#">Shipping</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Contact</h4>
-
-          <ul>
-            <li>+92 320 8465107</li>
-            <li>duaharbal@gmail.com</li>
-            <li>Lahore, Pakistan</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 Dua Harbel. All rights reserved.
-        </span>
-
-        <span>
-          Crafted with botanical intention.
-        </span>
-
-      </div>
-
-    </div>
-
+    <div class="footer-inner"><a class="logo" href="#" style="color:white">Dua Herbal<span>.</span></a><p>© <span id="year"></span> Dua Herbal. Built for everyday living.</p><p>Contact: +92-320-8465107</p></div>
   </footer>
+
 
   <!-- WHATSAPP -->
   <a
@@ -2387,448 +232,249 @@
     rel="noopener"
     aria-label="Contact Dua Harbel on WhatsApp"
   >
-    <img src="img/whatsapp.png">
+    <img src="img/whatsapp.png" height="50px">
   </a>
 
-  <!-- OVERLAY -->
+
+
+
+
   <div class="overlay" id="overlay"></div>
-
-  <!-- CART -->
-  <aside class="cart-drawer" id="cartDrawer">
-
-    <div class="cart-head">
-      <h3>Your Bag</h3>
-
-      <button class="icon-btn" id="closeCart" aria-label="Close cart">
-        ×
-      </button>
-    </div>
-
-    <div class="cart-items" id="cartItems">
-      <div class="empty-cart">
-        <div>
-          <div style="font-size:35px;margin-bottom:10px;">♡</div>
-          Your bag is currently empty.
-        </div>
-      </div>
-    </div>
-
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><h2>Your bag <span id="drawerCount" style="color:var(--muted);font-size:15px"></span></h2><button class="close-btn" id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
     <div class="cart-footer">
-
-      <div class="cart-total">
-        <span>Subtotal</span>
-        <span id="cartTotal">PKR 0</span>
-      </div>
-
-      <button class="btn btn-primary checkout" id="checkoutBtn">
-        Proceed to checkout →
-      </button>
-
+      <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <p class="cart-note">Shipping and taxes are calculated at checkout. This  does not process real payments.</p>
+      <button class="checkout-btn" id="checkoutBtn" disabled>Continue to checkout →</button>
     </div>
-
   </aside>
 
-  <!-- SEARCH -->
-  <div class="search-modal" id="searchModal">
-
-    <button class="icon-btn search-close" id="closeSearch">
-      ×
-    </button>
-
-    <div class="search-content">
-
-      <label>Search Dua Harbel</label>
-
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Search botanicals..."
-        autocomplete="off"
-      >
-
-      <p style="margin-top:20px;color:rgba(255,255,255,.5);font-size:12px;">
-        Try “tea”, “oil”, “moringa” or “turmeric”.
-      </p>
-
+  <div class="modal-wrap" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal">
+      <div class="modal-head"><div><h2 id="checkoutTitle">Almost yours.</h2><p>Enter your details to create a  order.</p></div><button class="close-btn" id="closeCheckout" aria-label="Close checkout">×</button></div>
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <div class="field"><label for="firstName">First name *</label><input id="firstName" name="firstName" required autocomplete="given-name"></div>
+          <div class="field"><label for="lastName">Last name *</label><input id="lastName" name="lastName" required autocomplete="family-name"></div>
+          <div class="field full"><label for="email">Email address *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field full"><label for="address">Delivery address *</label><input id="address" name="address" required autocomplete="street-address"></div>
+          <div class="field"><label for="city">City *</label><input id="city" name="city" required autocomplete="address-level2"></div>
+          <div class="field"><label for="postal">Postal code</label><input id="postal" name="postal" autocomplete="postal-code"></div>
+          <div class="field full"><label for="payment"> payment method</label><select id="payment" name="payment"><option>Pay on delivery ()</option><option>Card payment (not connected)</option></select></div>
+          <div class="field full"><label for="notes">Order notes (optional)</label><textarea id="notes" name="notes" placeholder="Any delivery instructions?"></textarea></div>
+        </div>
+        <div class="order-summary" id="orderSummary"></div>
+        <button class="checkout-btn" type="submit">Place  order</button>
+        <p> only: your details stay in this page and are not sent to a store server. Do not enter real sensitive payment information.</p>
+      </form>
     </div>
-
   </div>
-
-  <!-- TOAST -->
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="toast" role="status"></div>
 
   <script>
+    // Customize products, prices, categories, and image URLs in this array.
+    const products = [
+     
+      // product 1
 
-    /* =========================
-       CART
-    ========================= */
+     {id:1, name:"Majoon Al Khas Zafraan", price:5000, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
 
-    let cart = JSON.parse(localStorage.getItem("duaHarbelCart")) || [];
+      // product 2
 
+      {id:2, name:"Majoon Al Khas Kasturi", price:10000, sizes:[{name:"250g",price:10000},{name:"500g",price:18000},{name:"1000g",price:27000}], badge:"Bestseller", image:"img/majoon2.jpeg", alt:"Dua Herbal"},
+
+      // product 3
+
+      // {id:3, name:"Daily Notes Journal", price:16, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+
+      // product 4
+
+      // {id:4, name:"Soft Knit Throw", price:42, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+
+      // product 5
+
+      // {id:5, name:"Everyday Water Bottle", price:28, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+
+      // product 6
+
+      // {id:6, name:"Desk Companion Lamp", price:36, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+
+      // product 7
+
+      // {id:7, name:"Pocket Pen Set", price:12, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+
+      // product 8
+
+      // {id:8, name:"Weekend Sunglasses", price:32, sizes:[{name:"250g",price:5000},{name:"500g",price:9500},{name:"1000g",price:14000}], badge:"Bestseller", image:"img/majoon1.jpeg", alt:"Dua Herbal"},
+    ];
+
+    const money = value => new Intl.NumberFormat("en-PK", {style:"currency", currency:"PKR", maximumFractionDigits: 0}).format(value);
+    function priceFor(product, variants = {}) {
+      const selectedSize = variants.Size;
+      const selected = product.sizes?.find(size => size.name === selectedSize);
+      return selected ? selected.price : (product.sizes?.[0]?.price ?? product.price);
+    }
+    let activeCategory = "All";
+    let cart = {};
+    try { cart = JSON.parse(localStorage.getItem("Dua HerbalCart") || "{}") || {}; } catch { cart = {}; }
+
+    const grid = document.getElementById("productGrid");
+    const categoriesEl = document.getElementById("categories");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
     const cartDrawer = document.getElementById("cartDrawer");
     const overlay = document.getElementById("overlay");
-    const cartItems = document.getElementById("cartItems");
-    const cartCount = document.getElementById("cartCount");
-    const cartTotal = document.getElementById("cartTotal");
-
-    function saveCart() {
-      localStorage.setItem("duaHarbelCart", JSON.stringify(cart));
-    }
-
-    function formatPrice(price) {
-      return "PKR " + Number(price).toLocaleString("en-PK");
-    }
-
-    function updateCart() {
-
-      cartCount.textContent = cart.length;
-
-      if (!cart.length) {
-
-        cartItems.innerHTML = `
-          <div class="empty-cart">
-            <div>
-              <div style="font-size:35px;margin-bottom:10px;">♡</div>
-              Your bag is currently empty.
-            </div>
-          </div>
-        `;
-
-        cartTotal.textContent = "PKR 0";
-        return;
-      }
-
-      cartItems.innerHTML = cart.map((item, index) => `
-        <div class="cart-item">
-
-          <img src="${item.image}" alt="${item.name}">
-
-          <div>
-            <h4>${item.name}</h4>
-            <small>${formatPrice(item.price)}</small>
-          </div>
-
-          <button
-            class="remove-item"
-            onclick="removeFromCart(${index})"
-          >
-            Remove
-          </button>
-
-        </div>
-      `).join("");
-
-      const total = cart.reduce(
-        (sum, item) => sum + Number(item.price),
-        0
-      );
-
-      cartTotal.textContent = formatPrice(total);
-    }
-
-    function addToCart(product) {
-
-      cart.push(product);
-
-      saveCart();
-      updateCart();
-      showToast(product.name + " added to your bag");
-
-      openCart();
-    }
-
-    function removeFromCart(index) {
-
-      const removed = cart[index];
-
-      cart.splice(index, 1);
-
-      saveCart();
-      updateCart();
-
-      if (removed) {
-        showToast(removed.name + " removed");
-      }
-    }
-
-    function openCart() {
-      cartDrawer.classList.add("open");
-      overlay.classList.add("active");
-    }
-
-    function closeCart() {
-      cartDrawer.classList.remove("open");
-      overlay.classList.remove("active");
-    }
-
-    document.getElementById("openCart")
-      .addEventListener("click", openCart);
-
-    document.getElementById("closeCart")
-      .addEventListener("click", closeCart);
-
-    overlay.addEventListener("click", closeCart);
-
-    document.querySelectorAll(".add-product").forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        addToCart({
-          name: button.dataset.name,
-          price: Number(button.dataset.price),
-          image: button.dataset.image
-        });
-
-      });
-
-    });
-
-    updateCart();
-
-
-    /* =========================
-       FILTERS
-    ========================= */
-
-    const filters = document.querySelectorAll(".filter");
-    const products = document.querySelectorAll(".product-card");
-
-    filters.forEach(filter => {
-
-      filter.addEventListener("click", () => {
-
-        filters.forEach(item => item.classList.remove("active"));
-        filter.classList.add("active");
-
-        const category = filter.dataset.filter;
-
-        products.forEach(product => {
-
-          if (
-            category === "all" ||
-            product.dataset.category === category
-          ) {
-            product.style.display = "";
-          } else {
-            product.style.display = "none";
-          }
-
-        });
-
-      });
-
-    });
-
-
-    /* =========================
-       WISHLIST
-    ========================= */
-
-    document.querySelectorAll(".wishlist").forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        if (button.textContent.trim() === "♡") {
-
-          button.textContent = "♥";
-          showToast("Added to your wishlist");
-
-        } else {
-
-          button.textContent = "♡";
-          showToast("Removed from your wishlist");
-
-        }
-
-      });
-
-    });
-
-
-    /* =========================
-       FAQ
-    ========================= */
-
-    document.querySelectorAll(".faq-question").forEach(question => {
-
-      question.addEventListener("click", () => {
-
-        const item = question.parentElement;
-
-        document.querySelectorAll(".faq-item").forEach(other => {
-
-          if (other !== item) {
-            other.classList.remove("open");
-          }
-
-        });
-
-        item.classList.toggle("open");
-
-      });
-
-    });
-
-
-    /* =========================
-       SEARCH
-    ========================= */
-
-    const searchModal = document.getElementById("searchModal");
-    const searchInput = document.getElementById("searchInput");
-
-    document.getElementById("openSearch")
-      .addEventListener("click", () => {
-
-        searchModal.classList.add("active");
-
-        setTimeout(() => {
-          searchInput.focus();
-        }, 200);
-
-      });
-
-    document.getElementById("closeSearch")
-      .addEventListener("click", () => {
-
-        searchModal.classList.remove("active");
-
-      });
-
-    document.addEventListener("keydown", event => {
-
-      if (event.key === "Escape") {
-        searchModal.classList.remove("active");
-        closeCart();
-      }
-
-    });
-
-    searchInput.addEventListener("input", () => {
-
-      const query = searchInput.value.toLowerCase().trim();
-
-      products.forEach(product => {
-
-        const text = product.textContent.toLowerCase();
-
-        product.style.display =
-          !query || text.includes(query)
-            ? ""
-            : "none";
-
-      });
-
-    });
-
-
-    /* =========================
-       NEWSLETTER
-    ========================= */
-
-    document.getElementById("newsletterForm")
-      .addEventListener("submit", event => {
-
-        event.preventDefault();
-
-        showToast("Thank you for subscribing to Dua Harbel");
-
-        event.target.reset();
-
-      });
-
-
-    /* =========================
-       CHECKOUT
-    ========================= */
-
-    document.getElementById("checkoutBtn")
-      .addEventListener("click", () => {
-
-        if (!cart.length) {
-          showToast("Your bag is empty");
-          return;
-        }
-
-        showToast(
-          "Connect your payment/checkout system here."
-        );
-
-      });
-
-
-    /* =========================
-       TOAST
-    ========================= */
-
+    const checkoutModal = document.getElementById("checkoutModal");
+    const toastEl = document.getElementById("toast");
     let toastTimer;
 
     function showToast(message) {
-
-      const toast = document.getElementById("toast");
-
-      toast.textContent = message;
-      toast.classList.add("show");
-
+      toastEl.textContent = message;
+      toastEl.classList.add("show");
       clearTimeout(toastTimer);
-
-      toastTimer = setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2600);
-
+      toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2400);
     }
+    function saveCart() {
+      try { localStorage.setItem("Dua HerbalCart", JSON.stringify(cart)); } catch {}
+    }
+    function cartKey(id, variants = {}) {
+      return `${id}::${Object.entries(variants).sort(([a],[b]) => a.localeCompare(b)).map(([k,v]) => `${k}=${v}`).join("|")}`;
+    }
+    function readSelectedVariants(card) {
+      const selected = {};
+      card.querySelectorAll("[data-variant-label]").forEach(select => selected[select.dataset.variantLabel] = select.value);
+      return selected;
+    }
+    function getCartEntries() {
+      return Object.entries(cart).map(([key, value]) => {
+        // Migrate the earlier simple { productId: quantity } cart format.
+        if (typeof value === "number") return {key, id:Number(key), qty:value, variants:{}};
+        return {key, id:Number(value.id), qty:Number(value.qty), variants:value.variants || {}};
+      }).filter(item => item.qty > 0 && products.some(p => p.id === item.id));
+    }
+    function getCartCount() { return getCartEntries().reduce((sum, item) => sum + item.qty, 0); }
+    function getSubtotal() { return getCartEntries().reduce((sum, item) => {
+      const product = products.find(p => p.id === item.id);
+      return sum + (product ? priceFor(product, item.variants) * item.qty : 0);
+    }, 0); }
+    function renderCategories() {
+      const categories = ["All", ...new Set(products.map(p => p.category))];
+      categoriesEl.innerHTML = categories.map(cat => `<button class="category ${activeCategory === cat ? "active" : ""}" data-category="${cat}">${cat}</button>`).join("");
+      categoriesEl.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
+        renderCategories(); renderProducts();
+      }));
+    }
+    function renderProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = products.filter(p => (activeCategory === "All" || p.category === activeCategory) && (p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)));
+      if (sortSelect.value === "low") visible.sort((a,b) => priceFor(a)-priceFor(b));
+      if (sortSelect.value === "high") visible.sort((a,b) => priceFor(b)-priceFor(a));
+      if (sortSelect.value === "name") visible.sort((a,b) => a.name.localeCompare(b.name));
+      document.getElementById("resultCount").textContent = `${visible.length} ${visible.length === 1 ? "product" : "products"} to explore`;
+      grid.innerHTML = visible.length ? visible.map(p => `
+        <article class="product-card" data-product-card="${p.id}">
+          <div class="product-image"><img src="${p.image}" alt="${p.alt}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/700x650/e9eee5/245c46?text=Dua Herbal+Store'">${p.badge ? `<span class="badge">${p.badge}</span>` : ""}</div>
+          <div class="product-info"><span class="product-category">${p.category}</span><h3>${p.name}</h3>
+            <div class="price" data-price-for="${p.id}">${money(p.sizes[0].price)}</div>
+            <label style="display:block;font-size:11px;font-weight:750;margin-top:9px" for="variant-${p.id}-size">Size</label>
+            <select class="variant-select" id="variant-${p.id}-size" data-variant-label="Size">${p.sizes.map(size => `<option value="${size.name}">${size.name} — ${money(size.price)}</option>`).join("")}</select>
+            <div class="product-actions"><button class="add-cart-btn" data-add="${p.id}">Add to bag</button><button class="buy-now-btn" data-buy="${p.id}">Buy now ↗</button></div>
+          </div>
+        </article>`).join("") : `<div class="empty">No products found. Try a different search.</div>`;
+      grid.querySelectorAll("[data-variant-label='Size']").forEach(select => select.addEventListener("change", () => {
+        const card = select.closest("[data-product-card]");
+        const product = products.find(p => p.id === Number(card.dataset.productCard));
+        const selectedVariants = readSelectedVariants(card);
+        card.querySelector("[data-price-for]").textContent = money(priceFor(product, selectedVariants));
+      }));
+      grid.querySelectorAll("[data-add]").forEach(button => button.addEventListener("click", () => {
+        const card = button.closest("[data-product-card]");
+        addToCart(Number(button.dataset.add), readSelectedVariants(card));
+      }));
+      grid.querySelectorAll("[data-buy]").forEach(button => button.addEventListener("click", () => {
+        const card = button.closest("[data-product-card]");
+        const id = Number(button.dataset.buy);
+        const variants = readSelectedVariants(card);
+        cart = {};
+        cart[cartKey(id, variants)] = {id, qty: 1, variants};
+        saveCart(); renderCart(); openCheckout();
+      }));
+    }
+    function addToCart(id, variants = {}) {
+      const key = cartKey(id, variants);
+      const existing = cart[key];
+      cart[key] = {id, qty:(existing && typeof existing === "object" ? existing.qty : 0) + 1, variants};
+      saveCart(); renderCart(); showToast("Added selected variation to your bag ✓");
+    }
+    function changeQty(key, delta) {
+      const entry = cart[key];
+      if (!entry) return;
+      const current = typeof entry === "number" ? entry : entry.qty;
+      const next = current + delta;
+      if (next <= 0) delete cart[key];
+      else if (typeof entry === "number") cart[key] = next;
+      else cart[key].qty = next;
+      saveCart(); renderCart();
+    }
+    function renderCart() {
+      const count = getCartCount();
+      document.getElementById("cartCount").textContent = count;
+      document.getElementById("drawerCount").textContent = `(${count})`;
+      document.getElementById("subtotal").textContent = money(getSubtotal());
+      document.getElementById("checkoutBtn").disabled = count === 0;
+      const entries = getCartEntries();
+      document.getElementById("cartItems").innerHTML = entries.length ? entries.map(item => {
+        const p = products.find(product => product.id === item.id);
+        const variantText = Object.entries(item.variants).map(([label,value]) => `${label}: ${value}`).join(" · ");
+        return `<div class="cart-item"><img src="${p.image}" alt=""><div><h4>${p.name}</h4>${variantText ? `<small>${variantText}</small><br>` : ""}<small>${money(priceFor(p, item.variants))} each</small><div class="qty"><button data-change="${item.key}" data-delta="-1" aria-label="Decrease quantity">−</button><span>${item.qty}</span><button data-change="${item.key}" data-delta="1" aria-label="Increase quantity">+</button></div></div><button class="remove" data-remove="${item.key}">Remove</button></div>`;
+      }).join("") : `<div class="empty" style="margin-top:20px">Your bag is looking a little empty.<br><br>Find something you love.</div>`;
+      document.getElementById("cartItems").querySelectorAll("[data-change]").forEach(btn => btn.addEventListener("click", () => changeQty(btn.dataset.change, Number(btn.dataset.delta))));
+      document.getElementById("cartItems").querySelectorAll("[data-remove]").forEach(btn => btn.addEventListener("click", () => { delete cart[btn.dataset.remove]; saveCart(); renderCart(); }));
+    }
+    function openCart() { cartDrawer.classList.add("show"); overlay.classList.add("show"); cartDrawer.setAttribute("aria-hidden","false"); }
+    function closeCart() { cartDrawer.classList.remove("show"); overlay.classList.remove("show"); cartDrawer.setAttribute("aria-hidden","true"); }
+    function openCheckout() {
+      if (!getCartCount()) return;
+      closeCart();
+      const selectedItems = getCartEntries().map(item => {
+        const product = products.find(p => p.id === item.id);
+        const variantText = Object.entries(item.variants).map(([label,value]) => `${label}: ${value}`).join(", ");
+        return `${item.qty} × ${product.name}${variantText ? ` (${variantText})` : ""}`;
+      }).join("<br>");
+      document.getElementById("orderSummary").innerHTML = `<strong>Order summary</strong><br>${selectedItems}<hr><strong>${getCartCount()} item(s) · Total: ${money(getSubtotal())}</strong><br><small>This is a  order. No payment will be collected.</small>`;
+      checkoutModal.classList.add("show");
+    }
+    function closeCheckout() { checkoutModal.classList.remove("show"); }
 
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    document.getElementById("mobileMenu")
-      .addEventListener("click", () => {
-
-        const nav = document.querySelector(".nav-links");
-
-        if (getComputedStyle(nav).display === "none") {
-
-          nav.style.display = "flex";
-          nav.style.position = "absolute";
-          nav.style.top = "70px";
-          nav.style.left = "14px";
-          nav.style.right = "14px";
-          nav.style.padding = "20px";
-          nav.style.flexDirection = "column";
-          nav.style.alignItems = "flex-start";
-          nav.style.background = "#fcfaf5";
-          nav.style.border = "1px solid rgba(24,53,43,.13)";
-          nav.style.borderRadius = "18px";
-          nav.style.boxShadow = "0 20px 50px rgba(0,0,0,.1)";
-
-        } else {
-
-          nav.style.display = "none";
-
-        }
-
-      });
-
-
-    /* =========================
-       IMAGE FALLBACK
-    ========================= */
-
-    document.querySelectorAll("img").forEach(img => {
-
-      img.addEventListener("error", () => {
-
-        img.style.background = "#ddd5c7";
-        img.style.objectFit = "cover";
-
-      });
-
+    document.getElementById("openCart").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+    overlay.addEventListener("click", closeCart);
+    document.getElementById("checkoutBtn").addEventListener("click", openCheckout);
+    document.getElementById("closeCheckout").addEventListener("click", closeCheckout);
+    checkoutModal.addEventListener("click", event => { if (event.target === checkoutModal) closeCheckout(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape") { closeCart(); closeCheckout(); } });
+    searchInput.addEventListener("input", renderProducts);
+    sortSelect.addEventListener("change", renderProducts);
+    document.querySelectorAll("[data-jump-category]").forEach(link => link.addEventListener("click", () => {
+      activeCategory = link.dataset.jumpCategory; renderCategories(); renderProducts();
+    }));
+    document.getElementById("checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const orderId = "Dua Herbal-" + Math.random().toString(36).slice(2,8).toUpperCase();
+      const name = document.getElementById("firstName").value.trim();
+      const total = money(getSubtotal());
+      cart = {}; saveCart(); renderCart(); closeCheckout();
+      event.target.reset();
+      showToast(`Thank you, ${name}!  order ${orderId} created.`);
+      alert(`Order received in  mode!\n\nOrder number: ${orderId}\nTotal: ${total}\n\nNo payment was taken and no order was sent to a server.`);
     });
-
+    document.getElementById("newsletterForm").addEventListener("submit", event => {
+      event.preventDefault(); event.target.reset(); showToast("Thanks for your interest! Newsletter signup is -only.");
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderCategories(); renderProducts(); renderCart();
   </script>
-
 </body>
 </html>
-```
